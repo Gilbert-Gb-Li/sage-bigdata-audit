@@ -1,0 +1,19 @@
+{
+  "type": "and",
+  "groups": [
+    {
+      "type": "item",
+      "expression": {
+        "type": "contains",
+        "value": "xx"
+      }
+    },
+    {
+      "type": "item",
+      "expression": {
+        "type": "contains",
+        "value": "yy"
+      }
+    }
+  ]
+}

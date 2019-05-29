@@ -1,0 +1,1 @@
+${ok?string('√', '×')}, 数值：${curData}; 差值：${bound}; 均值：${avg}; 方差：${variance}; 标准差：${std}; 数据：<#list preData as item>${item!''}; </#list>

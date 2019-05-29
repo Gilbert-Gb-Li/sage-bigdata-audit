@@ -1,0 +1,33 @@
+{
+  "type": "batch",
+  "source": {
+    "type": "es-single",
+    "component": "es1",
+    "index": "guaji_20190221",
+    "scrollTimeValue": 600,
+    "scrollBatchSize": 1,
+    "sort": {
+      "field": "timestamp"
+    }
+  },
+  "parser": {
+    "type": "default",
+    "filters": [
+      {
+        "type": "set",
+        "field": "_id",
+        "value": "(concat \"_\" (field \"app\") (field \"table\") (date \"timestamp\" \"yyyy-MM-dd\")  (field \"car_id\")  )"
+      }
+    ]
+  },
+  "sink": {
+    "type": "es",
+    "component": "es1",
+    "store": {
+      "type": "default",
+      "esIndex": "test_reindex",
+      "esType": "data",
+      "esId": "(field _id)"
+    }
+  }
+}

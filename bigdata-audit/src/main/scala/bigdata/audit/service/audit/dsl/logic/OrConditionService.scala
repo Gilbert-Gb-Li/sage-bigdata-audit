@@ -1,0 +1,11 @@
+package bigdata.audit.service.audit.dsl.logic
+
+import bigdata.audit.service.audit.dsl.ConditionResult
+import bigdata.audit.vo.audit.dsl.config.logic.OrCondition
+
+case class OrConditionService(config: OrCondition)
+  extends BaseLogicConditionService(config) {
+  override def logic(auditInfos: Seq[ConditionResult]): Boolean = {
+    auditInfos.exists(_.result)
+  }
+}

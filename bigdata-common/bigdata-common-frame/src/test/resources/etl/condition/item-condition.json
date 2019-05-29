@@ -1,0 +1,7 @@
+{
+  "type": "item",
+  "expression": {
+    "type": "contains",
+    "value": "xx"
+  }
+}
